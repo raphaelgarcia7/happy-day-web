@@ -6,7 +6,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full bg-black text-yellow-400 z-50 flex items-center justify-between px-6 py-4">
       <div className="flex items-center">
         <Image
-          src="/logo.png"
+          src="/temas/happydaylogo.png"
           alt="Logo Happy Day"
           width={72}
           height={72}
@@ -25,6 +25,14 @@ export default function Header() {
             <Link href="/contato" className="px-4 py-2 rounded-md hover:bg-yellow-400 hover:text-black transition">
               Contato
             </Link>
+          </li>
+          <li>
+            <a
+              href="/catalogo"
+              className="px-4 py-2 rounded-md hover:bg-yellow-400 hover:text-black transition"
+            >
+              Catálogo
+            </a>
           </li>
         </ul>
       </nav>

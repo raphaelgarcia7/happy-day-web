@@ -15,9 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-yellow-400 text-black">
+      <body className="bg-yellow-400 text-black min-h-screen flex flex-col">
+        {/* Header fixo */}
         <Header />
-        <main className="pt-24 min-h-[60vh]">{children}</main>
+
+        {/* Main cresce para ocupar espaço entre Header e Footer */}
+        <main className="pt-24 flex-1">{children}</main>
+
+        {/* Footer sempre no final */}
         <Footer />
       </body>
     </html>
