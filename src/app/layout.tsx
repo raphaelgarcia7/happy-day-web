@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Main from "../components/Main";
 
 export const metadata: Metadata = {
   title: "Happy Day — Catálogo de Temas",
@@ -14,15 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <body className="bg-yellow-400 text-black min-h-screen flex flex-col">
-        {/* Header fixo */}
+    <html lang="pt-BR" className="h-full">
+      <body className="text-black min-h-screen flex flex-col bg-[url('/background_baloes.png')] bg-no-repeat bg-cover bg-center bg-fixed">
         <Header />
-
-        {/* Main cresce para ocupar espaço entre Header e Footer */}
-        <main className="pt-24 flex-1">{children}</main>
-
-        {/* Footer sempre no final */}
+        <Main>{children}</Main>
         <Footer />
       </body>
     </html>

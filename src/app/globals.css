@@ -6,6 +6,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-yellow-400 text-black;
-}
