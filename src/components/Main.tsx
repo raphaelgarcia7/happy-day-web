@@ -32,22 +32,38 @@ const items: CatalogItem[] = [
 
 export default function Main({ children }: { children?: React.ReactNode }) {
   return (
-    <main className="pt-24 flex-1 px-6 md:px-12 lg:px-20">
+    <main className="pt-24 flex-1 px-4 sm:px-6 md:px-12 lg:px-20">
       {children}
-
-      {/* Catálogo */}
       <section className="my-16">
-        <h2 className="text-3xl font-bold text-center text-amber-500 mb-10">
-          Catálogo
-        </h2>
+        <h2 className="text-center mb-10">
+  <span className="block text-2xl sm:text-3xl md:text-4xl font-extrabold text-amber-500">
+    Catálogo de Temas
+  </span>
+  <span className="block w-12 sm:w-16 h-1 bg-amber-500 mx-auto mt-2 rounded"></span>
+</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+        <div
+          className="
+            grid 
+            grid-cols-1 
+            [@media(min-width:375px)]:grid-cols-2
+            [@media(min-width:767px)]:grid-cols-3
+            gap-x-6 
+            gap-y-6 
+            lg:gap-y-12 
+            max-w-6xl mx-auto 
+            justify-items-center
+          "
+        >
           {items.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden flex flex-col w-full max-w-[280px]"
             >
-              <div className="relative w-full h-56">
+              {/* Imagem sempre quadrada */}
+              <div className="relative w-full aspect-square">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -56,10 +72,15 @@ export default function Main({ children }: { children?: React.ReactNode }) {
                 />
               </div>
 
-              <div className="p-4 flex flex-col items-center">
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-lg text-gray-700 mb-4">{item.price}</p>
-                <button className="bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition">
+              {/* Conteúdo */}
+              <div className="p-4 flex flex-col items-center flex-1">
+                <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-2 text-center">
+                  {item.title}
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 mb-4">
+                  {item.price}
+                </p>
+                <button className="mt-auto w-full bg-amber-500 text-white font-medium py-2 px-3 rounded-lg hover:bg-amber-600 transition text-sm md:text-base">
                   Verifique a disponibilidade
                 </button>
               </div>
