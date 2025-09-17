@@ -12,13 +12,13 @@ interface CatalogItem {
 const items: CatalogItem[] = [
   {
     id: 1,
-    title: "Tema Stitch",
+    title: "Tema Aniversário",
     price: "R$ 250,00",
     image: "/temas/60anos.jpg",
   },
   {
     id: 2,
-    title: "Tema Unicórnio",
+    title: "Tema Tardezinha",
     price: "R$ 220,00",
     image: "/temas/tardezinha.jpg",
   },
