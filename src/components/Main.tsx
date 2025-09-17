@@ -32,7 +32,7 @@ const items: CatalogItem[] = [
 
 export default function Main({ children }: { children?: React.ReactNode }) {
   return (
-    <main className="pt-24 flex-1 px-4 sm:px-6 md:px-12 lg:px-20">
+    <main className="pt-32 flex-1 px-4 sm:px-6 md:px-12 lg:px-20">
       {children}
       <section className="my-16">
         <h2 className="text-center mb-10">
