@@ -13,19 +13,13 @@ export default function Carousel() {
   const slides = [
     {
       id: 1,
-      src: "/temas/imagemexemplo.png",
-      alt: "Promoção 60 anos",
+      src: "/temas/diadacrianca.png",
+      alt: "Dia das Crianças",
     },
     {
       id: 2,
-      src: "/temas/sti.png",
-      alt: "Promoção chá de bebê",
-    },
-    {
-      id: 3,
-      src: "/temas/halo.png",
-      alt: "Promoção tardezinha",
-      legenda: "Decoração perfeita para festas ao pôr do sol 🌅",
+      src: "/temas/50off.png",
+      alt: "50off",
     },
   ];
 
@@ -35,24 +29,43 @@ export default function Carousel() {
   return (
     <div className="w-full max-w-[1140px] mx-auto my-10 relative">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={0}
-        slidesPerView={1}
-        navigation={{
-          nextEl: ".btn-next",
-          prevEl: ".btn-prev",
-        }}
-        pagination={{
-          clickable: true,
-          bulletClass:
-            "swiper-pagination-bullet bg-gray-400 w-3 h-3 rounded-full opacity-70 transition-all duration-300",
-          bulletActiveClass:
-            "swiper-pagination-bullet-active bg-amber-400 scale-125 opacity-100",
-        }}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        loop
-        className="rounded-lg"
-      >
+  modules={[Navigation, Pagination, Autoplay]}
+  spaceBetween={0}
+  slidesPerView={1}
+  navigation={{ nextEl: ".btn-next", prevEl: ".btn-prev" }}
+  pagination={{ clickable: true }}
+  autoplay={{ delay: 5000, disableOnInteraction: false }}
+  loop
+  className="
+    rounded-lg
+
+    /* espaçamento entre bullets */
+    [--swiper-pagination-bullet-horizontal-gap:3px]
+    sm:[--swiper-pagination-bullet-horizontal-gap:6px]
+
+    /* estilo base dos bullets */
+    [&_.swiper-pagination-bullet]:bg-gray-300
+    [&_.swiper-pagination-bullet]:opacity-70
+    [&_.swiper-pagination-bullet]:transition-all
+    [&_.swiper-pagination-bullet]:duration-300
+    [&_.swiper-pagination-bullet]:rounded-full
+
+    /* tamanhos por breakpoint: 320/375/425 e ↑ */
+    [&_.swiper-pagination-bullet]:w-1.5
+    [&_.swiper-pagination-bullet]:h-1.5
+    [@media(min-width:375px)]:[&_.swiper-pagination-bullet]:w-2
+    [@media(min-width:375px)]:[&_.swiper-pagination-bullet]:h-2
+    [@media(min-width:425px)]:[&_.swiper-pagination-bullet]:w-2.5
+    [@media(min-width:425px)]:[&_.swiper-pagination-bullet]:h-2.5
+    sm:[&_.swiper-pagination-bullet]:w-3
+    sm:[&_.swiper-pagination-bullet]:h-3
+
+    /* estado ativo */
+    [&_.swiper-pagination-bullet-active]:bg-amber-400
+    [&_.swiper-pagination-bullet-active]:opacity-100
+    [&_.swiper-pagination-bullet-active]:scale-125
+  "
+>
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <Link href={whatsappUrl} target="_blank">
