@@ -24,7 +24,7 @@ export default function Carousel() {
   ];
 
   const whatsappUrl =
-    "https://wa.me/5512996304221?text=Olá,%20vi%20as%20promoções%20do%20site%20Happy%20Day%20e%20gostaria%20de%20mais%20informações!";
+    "https://wa.me/5512978980898?text=Olá,%20vi%20as%20promoções%20do%20site%20Happy%20Day%20e%20gostaria%20de%20mais%20informações!";
 
   return (
     <div className="w-full max-w-[1140px] mx-auto my-10 relative">
